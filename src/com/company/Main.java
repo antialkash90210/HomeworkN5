@@ -1,27 +1,30 @@
-//Extraterrestrial guests
 package com.company;
-
+import java.io.*;
+import java.util.*;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int r1, r2, r3;
+        int radiusField;
+        int radius1;
+        int radius2;
+
         Scanner input = new Scanner(System.in);
+        PrintWriter output = new PrintWriter(System.out);
 
-        System.out.print("радиус поля: ");
-        r1 = input.nextInt();
-        System.out.print("первый радиус: ");
-        r2 = input.nextInt();
-        System.out.print("второй радиус: ");
-        r3 = input.nextInt();
+        radiusField = input.nextInt();
+        radius1 = input.nextInt();
+        radius2 = input.nextInt();
+        int sum = radius1 + radius2;
 
-        if(r1>(r2+r3)){
-            System.out.print("YES");
+        if (radiusField >= sum) {
+            output.println("YES");
         }
-        else{
-            System.out.print("NO");
+        else {
+            output.println("NO");
         }
-
+        output.flush();
     }
 }
